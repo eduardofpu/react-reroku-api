@@ -33,3 +33,36 @@ cdnjs.com
 https://github.com/ReactTraining/react-router
 https://github.com/reactjs/react-router-tutorial/tree/master/lessons/11-productionish-server
 
+
+///////////////////////////////////////////////////////////////////////////
+
+configurar o lader para o bootstrap do pagination funcionar
+loader:
+
+npm install --save-dev css-loader
+npm install style-loader --save-dev
+npm install url-loader --save-dev
+
+webpack.config.js ficara assim:
+
+module: {
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['react', 'es2015', 'stage-0']
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
+      {
+        test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/,
+        loader: 'url-loader'
+    }
+    ]
+  },
+
