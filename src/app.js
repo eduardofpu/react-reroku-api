@@ -5,6 +5,8 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './pages/App';
 import Home from './pages/Home';
 import home2 from './pages/home2';
+import Cities from './pages/Cities';
+
 
 ReactDOM.render((
 
@@ -13,6 +15,7 @@ ReactDOM.render((
     <Route path="/" component={App}>
     <IndexRoute component={Home}/>
     <Route path="/home2" component={home2} ></Route>
+    <Route path="/cities" component={Cities} ></Route>
      </Route>
   </Router>
 ), 

@@ -27,7 +27,7 @@ export default class App extends React.Component{
                                 <Link to="/home2" className="nav-link">Home2 </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="#">Pricing</a>
+                                <Link to="/cities" className="nav-link">Cities </Link>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
