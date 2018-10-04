@@ -3,8 +3,6 @@ import PubSub from 'pubsub-js';
 import Pagination from "react-js-pagination";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
-
 export default class Table extends Component {       
     constructor(props) {
         super(props);        

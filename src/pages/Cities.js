@@ -1,35 +1,25 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
 import Table from '../tables/Table';
+import CallGetCities from '../core/url-cities';
+import { BASE_URL } from '../core/constants'
+
 
 export default class Cities extends Component {
     constructor() {
         super()
      
         this.state = { lista: [], totalPages: 0 };
-        this.getTables = this.getTables.bind(this);   
+        this.getTables = this.getTables.bind(this); 
              
     }  
 
-    getTables(pagina) {
-        const page = (pagina - 1) || 0;
+    getTables(pagina) {        
+    const page = (pagina - 1) || 0;
+    const url = `${BASE_URL}/cities?page=${page}&size=10`;   
+    const setState = this.setState.bind(this);
     
-        fetch(`https://customers-challenge.herokuapp.com/cities?page=${page}&size=10`)
-          .then((response) => response.json())
-          .then((responseJson) => {
-            
-            this.setState({
-              isLoading: false,
-              lista: responseJson._embedded.cities, 
-              totalPages: responseJson.page.totalPages   
-                
-            }, function(){           
-               
-            });
-          })
-          .catch((error) =>{
-            console.error(error);
-          });
+    new CallGetCities().urlCallbackGet(url, setState);           
     }
     
     componentDidMount() {
