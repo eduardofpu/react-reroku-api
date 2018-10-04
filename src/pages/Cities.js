@@ -52,8 +52,7 @@ export default class Cities extends Component {
                 <div>
                     <div className="header">
                         <h1>Cities</h1>
-                        <button type="button" className="btn btn-primary">Primary</button>
-
+                        
                     </div>
                    
                     <div className="content" id="content">

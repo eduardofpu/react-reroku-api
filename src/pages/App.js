@@ -1,5 +1,10 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
+import "../bootstrap-4.1.3-dist/css/bootstrap.min.css";
+import "../bootstrap-4.1.3-dist/js/jquery.slim.min.js";
+import "../bootstrap-4.1.3-dist/js/popper.min.js";
+import "../bootstrap-4.1.3-dist/js/bootstrap.min.js";
+
 
 export default class App extends React.Component{
 
