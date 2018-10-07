@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
-import "../bootstrap-4.1.3-dist/css/bootstrap.min.css";
-import "../bootstrap-4.1.3-dist/js/jquery.slim.min.js";
-import "../bootstrap-4.1.3-dist/js/popper.min.js";
-import "../bootstrap-4.1.3-dist/js/bootstrap.min.js";
+
+import "../bootstrap-4.0.0-dist/css/bootstrap.min.css";
+import "../bootstrap-4.0.0-dist/js/jquery.slim.min.js";
+import "../bootstrap-4.0.0-dist/js/popper.min.js";
+import "../bootstrap-4.0.0-dist/js/bootstrap.min.js";
 
 
 export default class App extends React.Component{
@@ -28,12 +29,15 @@ export default class App extends React.Component{
                                     <IndexLink to="/" className="nav-link">Home </IndexLink>
                                     
                                 </li>
-                                <li className="nav-item">
-                                <Link to="/home2" className="nav-link">Home2 </Link>
-                                </li>
+                                
                                 <li className="nav-item">
                                 <Link to="/cities" className="nav-link">Cities </Link>
                                 </li>
+
+                                 <li className="nav-item">
+                                <Link to="/customers" className="nav-link">Customers </Link>
+                                </li>
+
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     Dropdown link

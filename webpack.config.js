@@ -35,6 +35,7 @@ module.exports = {
     filename: "app.min.js"
   },
   
+  
   plugins: debug ? [] : [
     new webpack.optimize.DedupePlugin(),
     new webpack.optimize.OccurenceOrderPlugin(),

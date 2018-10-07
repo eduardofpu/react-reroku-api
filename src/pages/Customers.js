@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
 import Table from '../tables/Table';
-import CallGetCities from '../core/url-cities';
+import CallGetCustomers from '../core/url-customers';
 import { BASE_URL } from '../core/constants'
-import FormCities from '../forms/FormCities';
+import FormCustomers from '../forms/FormCustomers';
 
 
-export default class Cities extends Component {
+export default class Customers extends Component {
     constructor() {
         super()
      
@@ -15,13 +15,12 @@ export default class Cities extends Component {
              
     }  
 
-    getTables(pagina) {  
-          
+    getTables(pagina) {        
     const page = (pagina - 1) || 0;
-    const url = `${BASE_URL}/cities?page=${page}&size=10`;   
-    const setState = this.setState.bind(this);   
+    const url = `${BASE_URL}/customers?page=${page}&size=10`;   
+    const setState = this.setState.bind(this);
     
-    new CallGetCities().urlCallbackGet(url, setState);           
+    new CallGetCustomers().urlCallbackGet(url, setState);           
     }
     
     componentDidMount() {
@@ -42,19 +41,18 @@ export default class Cities extends Component {
             return (
     
                 <div>
-                   
-
                     <div className="header">
-                    
-                    <FormCities />
 
-                        <h1>Cities</h1>
+                    <FormCustomers />
+                    
+                        <h1>Customers</h1>
                         
                     </div>
                    
-                    <div className="content" id="content"> 
+                    <div className="content" id="content">
+    
                        
-                        <Table lista={this.state.lista} totalPages={this.state.totalPages}/>                    
+                        <Table lista={this.state.lista} totalPages={this.state.totalPages} />                    
                          
                     </div>
                 </div>

@@ -4,8 +4,9 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import App from './pages/App';
 import Home from './pages/Home';
-import home2 from './pages/home2';
 import Cities from './pages/Cities';
+import Customers from './pages/Customers';
+
 
 
 ReactDOM.render((
@@ -13,9 +14,9 @@ ReactDOM.render((
   <Router history={browserHistory}>
 
     <Route path="/" component={App}>
-    <IndexRoute component={Home}/>
-    <Route path="/home2" component={home2} ></Route>
+    <IndexRoute component={Home}/>    
     <Route path="/cities" component={Cities} ></Route>
+    <Route path="/customers" component={Customers} ></Route>
      </Route>
   </Router>
 ), 

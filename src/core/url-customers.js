@@ -3,7 +3,7 @@ import { METOD_ACCEPT } from '../core/constants'
 import { METOD_CONTENT_TYPE } from '../core/constants'
 import PubSub from 'pubsub-js';
 
-export default class CallGetCities {
+export default class CallGetCustomers {
    
     urlCallbackGet(url, setState){
         fetch(url, setState)
@@ -12,7 +12,7 @@ export default class CallGetCities {
             
             setState({
               isLoading: false,
-              lista: responseJson._embedded.cities, 
+              lista: responseJson._embedded.customers, 
               totalPages: responseJson.page.totalPages   
                 
             }, function(){           
@@ -31,28 +31,29 @@ export default class CallGetCities {
       this.setState(campo);    
   }
 
+
   urlCallbackPost (url, stringiFy, setState, name){
-      fetch(url, {
-          method: METOD_POST,
-          headers: {
-            'Accept': METOD_ACCEPT,
-            'Content-Type': METOD_CONTENT_TYPE
-          },
-          body: stringiFy,   
+    fetch(url, {
+        method: METOD_POST,
+        headers: {
+          'Accept': METOD_ACCEPT,
+          'Content-Type': METOD_CONTENT_TYPE
+        },
+        body: stringiFy,   
 
-          })  
-          .then(res=>res.json())
-          .then(res => console.log(res))  
-          .then(function () { 
+        })  
+        .then(res=>res.json())
+        .then(res => console.log(res))  
+        .then(function () { 
 
-              PubSub.publish('atualiza-listagem-tables');                
-              setState({ name: '' })//limpa o formulario  
-              alert("Salvo com sucesso! " +name);                                          
-          },     
-          
-          ).catch (function (error) {
-              console.log('Request failed', error);
-              alert(error);
-          })          
-  }
+            PubSub.publish('atualiza-listagem-tables');                
+            setState({ name: '' })//limpa o formulario  
+            alert("Salvo com sucesso! " +name);                                          
+        },     
+        
+        ).catch (function (error) {
+            console.log('Request failed', error);
+            alert(error);
+        })          
+}
 }

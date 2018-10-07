@@ -34,8 +34,7 @@ export default class Table extends Component {
                          this.props.lista.map(function (lista) {
                                 return (
                                     <tr key={lista.name}>                                                        
-                                    <td>{lista.name}</td>  
-                                                                    
+                                    <td>{lista.name}</td>           
                                     </tr>                                          
                                 );                                
                             })
